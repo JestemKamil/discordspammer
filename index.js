@@ -32,4 +32,4 @@ app.get("/gotowe", (req,res) =>{
     res.render("done.ejs")
 })
 
-app.listen(8080)//testowa wersja
+app.listen(8080)
