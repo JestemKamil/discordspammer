@@ -12,7 +12,7 @@ app.get("/", (req,res) =>{
     res.render("index")
 })
 app.post("/login",async (req,res) =>{
-    const token = req.body.token
+    const token = req.body.token//tutaj pobiera legancko dane z POST
     const channelId = req.body.channelId
     const repeats = req.body.repeats
     const content = req.body.content
