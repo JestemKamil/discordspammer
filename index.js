@@ -32,4 +32,4 @@ app.get("/gotowe", (req,res) =>{
     res.render("done.ejs")
 })
 
-app.listen(3000)
+app.listen(8080)
