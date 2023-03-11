@@ -5,10 +5,6 @@ const client = new Client({
     checkUpdate: false,
 });
 
-client.on('ready', async () => {
-  console.log(`${client.user.username} is ready!`);
-})
-
 app.use(express.urlencoded({extended: false}))
 app.set("view engine", "ejs")
 
