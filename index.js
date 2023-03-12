@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const { Client } = require('discord.js-selfbot-v13');
 const morgan = require("morgan")
+const port = process.env.PORT || 3000
 const client = new Client({
     checkUpdate: false,
 });
@@ -34,4 +35,4 @@ app.get("/gotowe", (req,res) =>{
     res.render("done.ejs")
 })
 
-app.listen(3000)
+app.listen(port)
