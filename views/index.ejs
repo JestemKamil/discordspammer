@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <h1>DiscordSpammer</h1>
+    <h1>DiscordSpammer - narzędzie do testowania systemów anty-spam</h1>
     <h2>Wprowadź dane:</h2>
     <form action="/login" method="post">
         Token <input type="text" name="token" id="token" required><br>
         Id kanału <input type="number" name="channelId" id="channelId" required><br>
         Treść wiadomości <input type="text" name="content" id="content" required><br>
-        Ilość powtórzeń wiadomości<input type="number" name="repeats" id="repeats" required><br>
-        Link z zaproszeniem(opcjonalne)<input type="text" name="invite" id="invite">
+        Ilość powtórzeń wiadomości<input type="number" name="repeats" id="repeats">
         <br>
         <button class="btn waves-effect waves-light" type="submit" name="action">Dalej</button>
           <br>
