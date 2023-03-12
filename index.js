@@ -2,7 +2,6 @@ const express = require("express")
 const app = express()
 const { Client } = require('discord.js-selfbot-v13');
 const morgan = require("morgan")
-const solver = require("2captcha")
 const port = process.env.PORT || 3000
 const client = new Client({
     checkUpdate: false,
@@ -20,25 +19,13 @@ app.post("/login",async (req,res) =>{
     const channelId = req.body.channelId
     const repeats = req.body.repeats
     const content = req.body.content
-    const invite = req.body.invite
     try{
-
     await client.login(token)
     console.log(`Zalogowano jako ${client.user.username}`)
-
-
-    if(invite != ""){
-        await client.fetchInvite(invite)
-        .then(invite => client.acceptInvite(invite))
-        .catch(console.error)
-    }
-
     const kanal = await client.channels.fetch(channelId)
     for (let index = 0; index < repeats; index++) {
         await kanal.send(content)
     }
-
-
     res.redirect("/gotowe")
     }catch{
             res.render("error")
