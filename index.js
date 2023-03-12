@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express()
 const { Client } = require('discord.js-selfbot-v13');
+const morgan = require("morgan")
 const client = new Client({
     checkUpdate: false,
 });
 
+app.use(morgan("combined"))
 app.use(express.urlencoded({extended: false}))
 app.set("view engine", "ejs")
 
